@@ -9,15 +9,13 @@
     android:background="#FFFFFF">
 
     <!-- Uygulama Başlığı -->
-    <TextView
-        android:id="@+id/appTitle"
+    <ImageView
+        android:id="@+id/loog"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fiyat Radar"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#2196F3"
-        android:layout_marginBottom="32dp"/>
+        android:layout_height="264dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/fiyatradar" />
 
     <!-- E-mail Giriş -->
     <EditText
