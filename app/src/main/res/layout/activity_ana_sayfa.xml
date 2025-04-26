@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Fiyat Radar ANA SAYFA"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="100dp"
+            >
+
+        </TextView>
+        <Button
+            android:id="@+id/buttonToggle"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@color/purple_700"
+            android:textColor="@color/white"
+            android:text="Ürün Ekle"
+            android:layout_marginBottom="10dp"
+            />
+
+
+        <!-- Gizli olacak alan -->
+        <LinearLayout
+            android:id="@+id/hiddenLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="#f0f0f0"
+            android:padding="16dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ürün Bilgilerini giriniz."
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/urunAdi"
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:hint="Urun Adi"
+                android:layout_marginBottom="16dp"
+                ></EditText>
+            <EditText
+                android:id="@+id/urunKategori"
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:hint="Kategori"
+                android:layout_marginBottom="16dp"
+                ></EditText>
+            <EditText
+                android:id="@+id/urunFiyat"
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:hint="Fiyat"
+                android:layout_marginBottom="16dp"
+                ></EditText>
+            <EditText
+                android:id="@+id/barkodNo"
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:hint="Barkod Numarası"
+                android:layout_marginBottom="16dp"
+                ></EditText>
+            <Button
+                android:id="@+id/urunKaydet"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@color/purple_700"
+                android:textColor="@color/white"
+                android:text="Kaydet" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/buttonToggleuc"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@color/purple_700"
+            android:textColor="@color/white"
+            android:text="Listele"
+            android:layout_marginBottom="10dp"
+            />
+        <LinearLayout
+            android:id="@+id/hiddenLayoutuc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="#f0f0f0"
+            android:padding="16dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Urun adı: Elma Fiyatı: 30 TL Barkod numarası: 5476577678 "
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="5dp"
+                >
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Urun adı: Armut Fiyatı: 40 TL Barkod numarası: 900890789"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="5dp"
+                >
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Urun adı: Kivi Fiyatı: 70 TL Barkod numarası: 232453543"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="5dp"
+                >
+            </TextView>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/buttonToggleiki"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@color/purple_700"
+            android:textColor="@color/white"
+            android:text="Ürün Ara"
+            android:layout_marginBottom="10dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/hiddenLayoutiki"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="#f0f0f0"
+            android:padding="16dp"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/urunAdiki"
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:hint="Urun Adi"
+                android:layout_marginBottom="16dp"
+                ></EditText>
+            <EditText
+                android:id="@+id/urunKategoriiki"
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:hint="Kategori"
+                android:layout_marginBottom="16dp"
+                ></EditText>
+            <EditText
+                android:id="@+id/barkodNoiki"
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:hint="Barkod Numarası"
+                android:layout_marginBottom="16dp"
+                ></EditText>
+            <Button
+                android:id="@+id/urunAra"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@color/purple_700"
+                android:textColor="@color/white"
+                android:text="Ara" />
+        </LinearLayout>
+
+
+
+        </LinearLayout>
+</ScrollView>
