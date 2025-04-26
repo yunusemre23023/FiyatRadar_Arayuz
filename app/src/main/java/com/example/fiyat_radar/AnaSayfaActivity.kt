@@ -1,5 +1,6 @@
 package com.example.fiyat_radar
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -14,6 +15,14 @@ class AnaSayfaActivity : ComponentActivity() {
 
         val buttonToggle = findViewById<Button>(R.id.buttonToggle)
         val hiddenLayout = findViewById<LinearLayout>(R.id.hiddenLayout)
+
+        val camerabutton = findViewById<Button>(R.id.buttonkamera)
+        camerabutton.setOnClickListener {
+            val intent = Intent(this, KameraActivity::class.java)
+            startActivity(intent)
+
+
+        }
 
         buttonToggle.setOnClickListener {
             if (hiddenLayout.visibility == View.GONE) {

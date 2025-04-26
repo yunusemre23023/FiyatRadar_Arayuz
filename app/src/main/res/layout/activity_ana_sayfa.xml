@@ -11,26 +11,23 @@
         android:padding="24dp"
         android:gravity="center_horizontal">
 
-        <TextView
+        <ImageView
+            android:id="@+id/logoanasayfa"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Fiyat Radar ANA SAYFA"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="100dp"
-            >
+            android:layout_height="264dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="50dp"
+            android:src="@drawable/fiyatradar" />
 
-        </TextView>
+
         <Button
             android:id="@+id/buttonToggle"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:background="@color/purple_700"
+            android:background="@color/green"
             android:textColor="@color/white"
             android:text="Ürün Ekle"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             />
 
 
@@ -94,10 +91,10 @@
             android:id="@+id/buttonToggleuc"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:background="@color/purple_700"
+            android:background="@color/green"
             android:textColor="@color/white"
             android:text="Listele"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             />
         <LinearLayout
             android:id="@+id/hiddenLayoutuc"
@@ -144,10 +141,10 @@
             android:id="@+id/buttonToggleiki"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:background="@color/purple_700"
+            android:background="@color/green"
             android:textColor="@color/white"
             android:text="Ürün Ara"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             />
 
         <LinearLayout
@@ -189,6 +186,17 @@
                 android:textColor="@color/white"
                 android:text="Ara" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonkamera"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@color/green"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="|||||||BARKOD OKU |||||||"
+            android:layout_marginBottom="20dp"
+            />
 
 
 
