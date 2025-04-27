@@ -7,8 +7,9 @@ import android.widget.Button
 import android.widget.LinearLayout
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
+import sevices.ProductRepository
 
-class AnaSayfaActivity : ComponentActivity() {
+class AnaSayfaActivity : ComponentActivity() {private lateinit var repository: ProductRepository
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ana_sayfa)
@@ -60,6 +61,12 @@ class AnaSayfaActivity : ComponentActivity() {
             }
         }
 
+            // Repository'yi başlat
+            repository = ProductRepository()
+
+            // Örnek olarak ürün bilgilerini almak için istek gönderiyoruz
+            val barcode_no = "121121212345"
+            repository.getProductDetails(barcode_no)
 
     }
 }

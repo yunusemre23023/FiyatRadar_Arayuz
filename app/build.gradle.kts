@@ -66,6 +66,21 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:1.2.3")
     implementation("androidx.camera:camera-view:1.2.3")
     implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
+    // Ktor Client
+    implementation("io.ktor:ktor-client-core:2.3.5")
+    implementation("io.ktor:ktor-client-android:2.3.5")
+
+    // ContentNegotiation + JSON
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.5")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.5")
+
+    // Kotlinx Serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")  // Retrofit kütüphanesi
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")  // JSON dönüştürücü
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.1") // Hata ve
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

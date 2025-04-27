@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.ComponentActivity
-import androidx.appcompat.app.AppCompatActivity
 
 class RegisterActivity : ComponentActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,5 +15,7 @@ class RegisterActivity : ComponentActivity()  {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
     }
+
+
 }
 }
