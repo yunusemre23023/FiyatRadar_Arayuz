@@ -107,9 +107,10 @@
             android:layout_marginTop="8dp">
 
             <TextView
+                android:id="@+id/uruntextbir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="- Urun adı: Elma Fiyatı: 30 TL Barkod numarası: 5476577678 "
+                android:text=""
                 android:textSize="20dp"
                 android:textColor="@color/black"
                 android:layout_marginBottom="5dp"

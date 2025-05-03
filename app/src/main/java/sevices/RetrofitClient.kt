@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    private const val BASE_URL = "http://192.168.1.164:8080/"  // Backend IP adresinizi burada belirtiyorsunuz
+    private const val BASE_URL = "http://192.168.1.190:8080/"  // Backend IP adresinizi burada belirtiyorsunuz
 
     // Retrofit nesnesini oluşturma
     val retrofitInstance: Retrofit by lazy {

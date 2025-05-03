@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import sevices.ProductRepository
@@ -61,12 +62,33 @@ class AnaSayfaActivity : ComponentActivity() {private lateinit var repository: P
             }
         }
 
+        val urunTextBir: TextView = findViewById(R.id.uruntextbir)
+
+        val repo = ProductRepository()
+        repo.getProductDetails("121121212345") { product ->
+            if (product != null) {
+                val fiyatStr = String.format("%.2f", product.price)
+                val market = product.storeName
+                val aciklama = product.description
+                val resultText = """
+            Ürün: ${product.productName}
+            Fiyat: $fiyatStr
+            Market: $market
+            Açıklama: $aciklama
+        """.trimIndent()
+
+                urunTextBir.text = resultText
+            } else {
+                urunTextBir.text = "Ürün bilgisi alınamadı"
+            }
+        }
+
             // Repository'yi başlat
-            repository = ProductRepository()
+           /* repository = ProductRepository()
 
             // Örnek olarak ürün bilgilerini almak için istek gönderiyoruz
             val barcode_no = "121121212345"
-            repository.getProductDetails(barcode_no)
+            repository.getProductDetails(barcode_no)*/
 
     }
 }
