@@ -11,4 +11,11 @@ interface ApiService {
     @GET("api/products/searchByBarcode")
     fun getProductDetails(@Query("barcode") barcode: String): Call<Product>
 
+    @GET("/api/products")
+    fun getAllProducts(): Call<List<Product>>
+
+    @GET("api/products/search")
+    fun getProductByName(@Query("name") name: String): Call<List<Product>>
+
+
 }

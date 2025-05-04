@@ -55,6 +55,13 @@
             android:label="Kamera"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
+        <activity
+            android:name=".UrunGetir"
+            android:exported="true"
+            android:label="Ürün Getir"
+            android:theme="@style/Theme.Fiyat_Radar" />
+
+
     </application>
 
 </manifest>

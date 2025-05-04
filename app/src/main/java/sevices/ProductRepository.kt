@@ -25,5 +25,49 @@ class ProductRepository {
             }
         })
     }
+    fun fetchAllProducts(callback: (String) -> Unit) {
+        RetrofitClient.apiService.getAllProducts().enqueue(object : Callback<List<Product>> {
+            override fun onResponse(call: Call<List<Product>>, response: Response<List<Product>>) {
+                if (response.isSuccessful) {
+                    val products = response.body()
+                    val productsText = StringBuilder()
+
+                    products?.forEach { product ->
+                        productsText.append("Ürün Adı: ${product.productName}\n")
+                        productsText.append("Fiyat: ${product.price}\n\n")
+                    }
+
+                    callback(productsText.toString()) // Veriyi geri gönderiyoruz
+                } else {
+                    callback("Hata kodu: ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Product>>, t: Throwable) {
+                callback("İstek başarısız: ${t.message}")
+            }
+        })
+    }
+
+    fun getProductByName(productName: String, callback: (List<Product>?) -> Unit) {
+        RetrofitClient.apiService.getProductByName(productName).enqueue(object : Callback<List<Product>> {
+            override fun onResponse(call: Call<List<Product>>, response: Response<List<Product>>) {
+                if (response.isSuccessful) {
+                    val productList = response.body()
+                    callback(productList)
+                } else {
+                    callback(null)
+                    Log.e("Product", "Error: ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Product>>, t: Throwable) {
+                callback(null)
+                Log.e("Product", "Request failed: ${t.message}")
+            }
+        })
+    }
+
+
 
 }

@@ -4,10 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import sevices.ProductRepository
 
 class AnaSayfaActivity : ComponentActivity() {private lateinit var repository: ProductRepository
@@ -15,39 +18,13 @@ class AnaSayfaActivity : ComponentActivity() {private lateinit var repository: P
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ana_sayfa)
 
-        val buttonToggle = findViewById<Button>(R.id.buttonToggle)
-        val hiddenLayout = findViewById<LinearLayout>(R.id.hiddenLayout)
 
         val camerabutton = findViewById<Button>(R.id.buttonkamera)
         camerabutton.setOnClickListener {
             val intent = Intent(this, KameraActivity::class.java)
             startActivity(intent)
-
-
         }
 
-        buttonToggle.setOnClickListener {
-            if (hiddenLayout.visibility == View.GONE) {
-                hiddenLayout.visibility = View.VISIBLE
-                buttonToggle.text = "Detayları Gizle"
-            } else {
-                hiddenLayout.visibility = View.GONE
-                buttonToggle.text = "Ürün Ekle"
-            }
-        }
-
-        val buttonToggletwo = findViewById<Button>(R.id.buttonToggleiki)
-        val hiddenLayouttwo = findViewById<LinearLayout>(R.id.hiddenLayoutiki)
-
-        buttonToggletwo.setOnClickListener {
-            if (hiddenLayouttwo.visibility == View.GONE) {
-                hiddenLayouttwo.visibility = View.VISIBLE
-                buttonToggletwo.text = "Detayları Gizle"
-            } else {
-                hiddenLayouttwo.visibility = View.GONE
-                buttonToggletwo.text = "Ürün Ara"
-            }
-        }
 
         val buttonTogglet = findViewById<Button>(R.id.buttonToggleuc)
         val hiddenLayoutt = findViewById<LinearLayout>(R.id.hiddenLayoutuc)
@@ -83,12 +60,66 @@ class AnaSayfaActivity : ComponentActivity() {private lateinit var repository: P
             }
         }
 
-            // Repository'yi başlat
+        val urunTextIki: TextView = findViewById(R.id.uruntextiki)
+
+        val repoiki = ProductRepository()
+
+        repoiki.fetchAllProducts { resultTextiki ->
+            urunTextIki.post {
+                urunTextIki.text = resultTextiki
+            }
+        }
+
+        val buttonAra = findViewById<Button>(R.id.buttonara)
+        val editTextUrunAdi = findViewById<EditText>(R.id.edittextara)
+        val urungoster = findViewById<TextView>(R.id.uruntextbir)
+        val repouc = ProductRepository()
+
+        buttonAra.setOnClickListener {
+            val urunAdi = editTextUrunAdi.text.toString().trim()
+
+            if (urunAdi.isNotEmpty()) {
+                repouc.getProductByName(urunAdi) { productList ->
+                    runOnUiThread {
+                        if (!productList.isNullOrEmpty()) {
+                            val result = productList.joinToString(separator = "\n\n") { product ->
+                                val fiyatStr = String.format("%.2f", product.price)
+                                """
+                        Ürün: ${product.productName}
+                        Fiyat: $fiyatStr
+                        Market: ${product.storeName}
+                        Açıklama: ${product.description}
+                        """.trimIndent()
+                            }
+                            urungoster.text = result
+                        } else {
+                            urungoster.text = "Ürün bulunamadı."
+                        }
+                    }
+                }
+            } else {
+                urungoster.text = "Lütfen bir ürün adı girin."
+            }
+        }
+        val bas ="https://cdn.cimri.io"
+        val resim = findViewById<ImageView>(R.id.logoImageView)
+        val linki = "$bas/market/260x260/mayi-tuz-2-kg-delice-iyotlu-ince-kaynak-tuzu-_1948277.jpg"
+
+        Glide.with(this)
+            .load(linki)
+            .into(resim)
+
+
+
+
+        // Repository'yi başlat
            /* repository = ProductRepository()
 
             // Örnek olarak ürün bilgilerini almak için istek gönderiyoruz
             val barcode_no = "121121212345"
             repository.getProductDetails(barcode_no)*/
+
+
 
     }
 }
