@@ -19,10 +19,10 @@
 
     <!-- E-mail Giriş -->
     <EditText
-        android:id="@+id/emailEditText"
+        android:id="@+id/kullaniciaditext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="E-posta"
+        android:hint="Kullanici Adi"
         android:inputType="textEmailAddress"
         android:padding="12dp"
         android:background="@android:drawable/edit_text"
