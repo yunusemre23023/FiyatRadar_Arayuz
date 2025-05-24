@@ -75,6 +75,8 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.5")
 
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation ("androidx.recyclerview:recyclerview:1.3.1")
+    implementation(libs.androidx.cardview)
     annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
     implementation("com.squareup.okhttp3:okhttp:4.9.3")
     implementation("com.github.bumptech.glide:okhttp3-integration:4.16.0")

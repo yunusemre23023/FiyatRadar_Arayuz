@@ -36,61 +36,9 @@
             android:text="ARA"
             android:backgroundTint="#2E7D32"
             android:textColor="@android:color/white"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="150dp"
             android:background="@drawable/button_background"/>
 
-        <Button
-            android:id="@+id/buttonToggleuc"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:text="LİSTELE"
-            android:backgroundTint="#66BB6A"
-            android:textColor="@android:color/white"
-            android:background="@drawable/button_background"
-            android:layout_marginBottom="10dp"/>
-
-        <LinearLayout
-            android:id="@+id/hiddenLayoutuc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:background="@drawable/card_background"
-            android:padding="16dp"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:id="@+id/uruntextbir"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
-
-            <ImageView
-                android:id="@+id/logoImageView"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:id="@+id/uruntextiki"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="#000000"
-                android:layout_marginBottom="4dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- Ürün: Kivi | Fiyat: 70 TL | Barkod: 232453543"
-                android:textSize="16sp"
-                android:textColor="#333333"
-                android:layout_marginBottom="5dp"/>
-        </LinearLayout>
 
         <Button
             android:id="@+id/buttonkamera"

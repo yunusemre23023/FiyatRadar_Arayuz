@@ -26,88 +26,17 @@ class AnaSayfaActivity : ComponentActivity() {private lateinit var repository: P
         }
 
 
-        val buttonTogglet = findViewById<Button>(R.id.buttonToggleuc)
-        val hiddenLayoutt = findViewById<LinearLayout>(R.id.hiddenLayoutuc)
-
-        buttonTogglet.setOnClickListener {
-            if (hiddenLayoutt.visibility == View.GONE) {
-                hiddenLayoutt.visibility = View.VISIBLE
-                buttonTogglet.text = "Detayları Gizle"
-            } else {
-                hiddenLayoutt.visibility = View.GONE
-                buttonTogglet.text = "Listele"
-            }
-        }
-
-        val urunTextBir: TextView = findViewById(R.id.uruntextbir)
-
-        val repo = ProductRepository()
-        repo.getProductDetails("121121212345") { product ->
-            if (product != null) {
-                val fiyatStr = String.format("%.2f", product.price)
-                val market = product.storeName
-                val aciklama = product.description
-                val resultText = """
-            Ürün: ${product.productName}
-            Fiyat: $fiyatStr
-            Market: $market
-            Açıklama: $aciklama
-        """.trimIndent()
-
-                urunTextBir.text = resultText
-            } else {
-                urunTextBir.text = "Ürün bilgisi alınamadı"
-            }
-        }
-
-        val urunTextIki: TextView = findViewById(R.id.uruntextiki)
-
-        val repoiki = ProductRepository()
-
-        repoiki.fetchAllProducts { resultTextiki ->
-            urunTextIki.post {
-                urunTextIki.text = resultTextiki
-            }
-        }
 
         val buttonAra = findViewById<Button>(R.id.buttonara)
         val editTextUrunAdi = findViewById<EditText>(R.id.edittextara)
-        val urungoster = findViewById<TextView>(R.id.uruntextbir)
-        val repouc = ProductRepository()
 
         buttonAra.setOnClickListener {
             val urunAdi = editTextUrunAdi.text.toString().trim()
-
-            if (urunAdi.isNotEmpty()) {
-                repouc.getProductByName(urunAdi) { productList ->
-                    runOnUiThread {
-                        if (!productList.isNullOrEmpty()) {
-                            val result = productList.joinToString(separator = "\n\n") { product ->
-                                val fiyatStr = String.format("%.2f", product.price)
-                                """
-                        Ürün: ${product.productName}
-                        Fiyat: $fiyatStr
-                        Market: ${product.storeName}
-                        Açıklama: ${product.description}
-                        """.trimIndent()
-                            }
-                            urungoster.text = result
-                        } else {
-                            urungoster.text = "Ürün bulunamadı."
-                        }
-                    }
-                }
-            } else {
-                urungoster.text = "Lütfen bir ürün adı girin."
-            }
+            UrunuAra.adi = editTextUrunAdi.text.toString()
+            val intent = Intent(this, Listeleme::class.java)
+            startActivity(intent)
         }
-        val bas ="https://cdn.cimri.io"
-        val resim = findViewById<ImageView>(R.id.logoImageView)
-        val linki = "$bas/market/260x260/mayi-tuz-2-kg-delice-iyotlu-ince-kaynak-tuzu-_1948277.jpg"
 
-        Glide.with(this)
-            .load(linki)
-            .into(resim)
 
 
 

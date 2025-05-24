@@ -61,6 +61,8 @@
             android:label="Ürün Getir"
             android:theme="@style/Theme.Fiyat_Radar" />
 
+        <activity android:name=".Listeleme" />
+
 
     </application>
 
