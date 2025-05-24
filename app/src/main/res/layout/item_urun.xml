@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
     card_view:cardCornerRadius="12dp"
-    card_view:cardElevation="4dp">
+    card_view:cardElevation="4dp"
+    >
 
     <LinearLayout
         android:orientation="horizontal"
@@ -52,6 +53,20 @@
             android:src="@drawable/ic_launcher_background"
             android:layout_gravity="center_vertical"
             android:scaleType="centerInside" />
+
+        <Button
+            android:id="@+id/btnKarsilastir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Git"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 

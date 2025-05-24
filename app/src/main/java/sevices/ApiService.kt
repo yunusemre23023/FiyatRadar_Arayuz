@@ -27,4 +27,8 @@ interface ApiService {
     @Headers("Content-Type: application/json")
     fun loginUser(@Body user: LoginRequest): Call<String>
 
+    @GET("/api/price-comparisons/by-barcode/{barcode}")
+    fun getPriceComparisonsByBarcode(@Path("barcode") barcode: String): Call<List<PriceComparisonDTO>>
+
+
 }

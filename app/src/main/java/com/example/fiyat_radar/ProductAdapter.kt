@@ -1,10 +1,13 @@
 package com.example.fiyat_radar
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import sevices.Product
@@ -31,7 +34,10 @@ class ProductAdapter(private var productList: List<Product>) : RecyclerView.Adap
         val fiyat: TextView = itemView.findViewById(R.id.textFiyat)
         val urunResim: ImageView = itemView.findViewById(R.id.imageUrun)
         val marketLogo: ImageView = itemView.findViewById(R.id.imageMarketLogo)
+        val btnKarsilastir: Button = itemView.findViewById(R.id.btnKarsilastir)
     }
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_urun, parent, false)
@@ -64,6 +70,13 @@ class ProductAdapter(private var productList: List<Product>) : RecyclerView.Adap
         Glide.with(holder.itemView.context)
             .load(linkiki)
             .into(holder.marketLogo)
+
+        holder.btnKarsilastir.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, DetayGoruntule::class.java)
+            intent.putExtra("barcode", product.barcode)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = productList.size

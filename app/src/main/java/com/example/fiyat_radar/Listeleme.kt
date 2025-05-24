@@ -33,10 +33,12 @@ class Listeleme : ComponentActivity() {
         val buttonNext = findViewById<Button>(R.id.buttonNext)
         val buttonGeriDon = findViewById<Button>(R.id.buttonGeriDon)
 
+
         buttonGeriDon.setOnClickListener {
             startActivity(Intent(this, AnaSayfaActivity::class.java))
             finish()
         }
+
 
         fun updatePage() {
             val totalPages = (allProducts.size + pageSize - 1) / pageSize

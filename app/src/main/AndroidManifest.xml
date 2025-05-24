@@ -62,6 +62,9 @@
             android:theme="@style/Theme.Fiyat_Radar" />
 
         <activity android:name=".Listeleme" />
+        <activity android:name=".DetayGoruntule"
+            android:theme="@style/Theme.Fiyat_Radar"
+            />
 
 
     </application>
